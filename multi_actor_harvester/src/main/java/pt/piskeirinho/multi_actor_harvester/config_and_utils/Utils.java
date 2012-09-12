@@ -1,4 +1,4 @@
-package pt.piskeirinho.multi_actor_harvester;
+package pt.piskeirinho.multi_actor_harvester.config_and_utils;
 
 public final class Utils {
 	public static double getElapsedTime(long startTime) {

@@ -2,6 +2,7 @@ package pt.piskeirinho.multi_actor_harvester;
 
 import pt.piskeirinho.multi_actor_harvester.actors.CoordinatorActor;
 import pt.piskeirinho.multi_actor_harvester.actors.WorkerActor;
+import pt.piskeirinho.multi_actor_harvester.config_and_utils.Configs;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;

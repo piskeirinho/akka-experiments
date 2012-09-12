@@ -4,6 +4,8 @@ import java.util.Iterator;
 
 import pt.keep.common.oai.RecordType;
 import pt.keep.common.oai.harvester.Harvester;
+import pt.piskeirinho.multi_actor_harvester.config_and_utils.Configs;
+import pt.piskeirinho.multi_actor_harvester.config_and_utils.Utils;
 
 public class SequentialHarvester {
 	private Harvester harvester = null;

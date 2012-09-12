@@ -1,7 +1,7 @@
 package pt.piskeirinho.multi_actor_harvester.actors;
 
-import pt.piskeirinho.multi_actor_harvester.Configs;
-import pt.piskeirinho.multi_actor_harvester.Utils;
+import pt.piskeirinho.multi_actor_harvester.config_and_utils.Configs;
+import pt.piskeirinho.multi_actor_harvester.config_and_utils.Utils;
 import akka.actor.UntypedActor;
 
 public class CoordinatorActor extends UntypedActor {

@@ -4,8 +4,8 @@ import java.util.Iterator;
 
 import pt.keep.common.oai.RecordType;
 import pt.keep.common.oai.harvester.Harvester;
-import pt.piskeirinho.multi_actor_harvester.Configs;
-import pt.piskeirinho.multi_actor_harvester.Utils;
+import pt.piskeirinho.multi_actor_harvester.config_and_utils.Configs;
+import pt.piskeirinho.multi_actor_harvester.config_and_utils.Utils;
 import akka.actor.ActorRef;
 import akka.actor.UntypedActor;
 
