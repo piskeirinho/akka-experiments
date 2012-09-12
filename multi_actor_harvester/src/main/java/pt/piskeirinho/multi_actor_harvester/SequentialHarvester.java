@@ -51,7 +51,6 @@ public class SequentialHarvester {
 	}
 
 	public static void main(String[] args) {
-		SequentialHarvester sh = new SequentialHarvester();
-		sh.run();
+		new SequentialHarvester().run();
 	}
 }
