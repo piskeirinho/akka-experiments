@@ -1,4 +1,4 @@
-package pt.piskeirinho.multi_actor_harvester_with_remoting.config_and_utils;
+package pt.piskeirinho.multi_actor_harvester_cluster.config_and_utils;
 
 import java.util.Arrays;
 import java.util.List;
