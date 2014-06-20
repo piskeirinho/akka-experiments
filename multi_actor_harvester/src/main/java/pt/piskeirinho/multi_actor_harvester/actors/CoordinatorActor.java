@@ -15,8 +15,7 @@ public class CoordinatorActor extends UntypedActor {
 	@Override
 	public void onReceive(Object arg0) throws Exception {
 		String repoOutMessage = (String) arg0;
-		System.out.println("3)" + Utils.getElapsedTime(startTime) + " "
-				+ repoOutMessage);
+		Utils.output("4 - " + repoOutMessage, Utils.getElapsedTime(startTime));
 		i++;
 		if (i == Configs.repositoriesURLs.size()) {
 			getContext().system().shutdown();

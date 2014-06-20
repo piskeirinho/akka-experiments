@@ -6,11 +6,9 @@ import pt.piskeirinho.multi_actor_harvester.config_and_utils.Configs;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
-import akka.actor.UntypedActor;
-import akka.actor.UntypedActorFactory;
-import akka.routing.RoundRobinRouter;
+import akka.routing.RoundRobinPool;
 
-public class MultiActorHarvester {
+public class MultiActorHarvester implements Runnable {
 	private ActorSystem system;
 	private ActorRef router;
 	private int numberOfWorkers = 10;
@@ -19,27 +17,16 @@ public class MultiActorHarvester {
 
 		system = ActorSystem.create("LoadGeneratorApp");
 
-		final ActorRef appManager = system.actorOf(new Props(
-				new UntypedActorFactory() {
-					private static final long serialVersionUID = 5668899944784966304L;
-
-					public UntypedActor create() {
-						return new CoordinatorActor(System.nanoTime());
-					}
-				}), "CoordinatorActor");
-
-		router = system.actorOf(new Props(new UntypedActorFactory() {
-			private static final long serialVersionUID = -517854977585983524L;
-
-			public UntypedActor create() {
-				return new WorkerActor(appManager, System.nanoTime());
-			}
-		}).withRouter(new RoundRobinRouter(numberOfWorkers)));
+		ActorRef boss = system.actorOf(
+				Props.create(CoordinatorActor.class, System.nanoTime()),
+				"appManager");
+		router = system.actorOf(new RoundRobinPool(numberOfWorkers).props(Props
+				.create(WorkerActor.class, boss, System.nanoTime())), "router");
 	}
 
-	private void run() {
+	public void run() {
 		for (String repo : Configs.repositoriesURLs) {
-			router.tell(repo);
+			router.tell(repo, router);
 		}
 	}
 

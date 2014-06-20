@@ -3,26 +3,31 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>pt.piskeirinho</groupId>
 	<artifactId>multi_actor_harvester</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>Multi Actor Harvester</name>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<developers>
+		<developer>
+			<id>piskeirinho</id>
+			<name>Helder Silva</name>
+			<email>piskeirinho [at] gmail [dot] com</email>
+		</developer>
+	</developers>
 	<repositories>
 		<repository>
 			<id>KEEP Artifacts</id>
 			<name>KEEP Artifacts-releases</name>
 			<url>http://artifactory.keep.pt/keep</url>
 		</repository>
-		<repository>
-			<id>typesafe</id>
-			<name>Typesafe Repository</name>
-			<url>http://repo.typesafe.com/typesafe/releases/</url>
-		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>com.typesafe.akka</groupId>
-			<artifactId>akka-actor</artifactId>
-			<version>2.0.3</version>
+			<artifactId>akka-actor_2.10</artifactId>
+			<version>2.3.3</version>
 		</dependency>
 		<dependency>
 			<groupId>pt.keep</groupId>
@@ -31,8 +36,12 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -46,5 +55,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

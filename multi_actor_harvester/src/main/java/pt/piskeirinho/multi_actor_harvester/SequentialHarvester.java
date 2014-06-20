@@ -7,7 +7,7 @@ import pt.keep.common.oai.harvester.Harvester;
 import pt.piskeirinho.multi_actor_harvester.config_and_utils.Configs;
 import pt.piskeirinho.multi_actor_harvester.config_and_utils.Utils;
 
-public class SequentialHarvester {
+public class SequentialHarvester implements Runnable {
 	private Harvester harvester = null;
 	private long startTime;
 
@@ -19,19 +19,17 @@ public class SequentialHarvester {
 		boolean errorObtainingNext = false;
 		int i = 0;
 		for (String repo : Configs.repositoriesURLs) {
-			System.out.println("1)" + Utils.getElapsedTime(startTime) + ")"
-					+ repo);
+			Utils.output("1 - Starting to harvest \"" + repo + "\"",
+					Utils.getElapsedTime(startTime));
 			harvester = new Harvester(repo);
-			System.out.println("1.1)" + Utils.getElapsedTime(startTime) + ")"
-					+ repo);
+			Utils.output("2 - Instantiated harvester for \"" + repo + "\"",
+					Utils.getElapsedTime(startTime));
 			harvester.setRequestRetries(Configs.DEFAULT_RETRIES);
 			harvester.setRequestTimeout(Configs.DETAULT_TIMEOUT);
 			try {
 				Iterator<RecordType> listRecordsIterator = harvester
 						.getListRecordsIterator(null, null, Configs.SET_SPEC,
 								Configs.METADATA_PREFIX);
-				System.out.println("1.2)" + Utils.getElapsedTime(startTime)
-						+ ")" + repo);
 				while (listRecordsIterator.hasNext() && !errorObtainingNext) {
 					try {
 						listRecordsIterator.next();
@@ -44,8 +42,8 @@ public class SequentialHarvester {
 			} catch (Exception e) {
 				System.err.println(e);
 			}
-			System.out.println(Utils.getElapsedTime(startTime) + " :> " + repo
-					+ " - " + i);
+			Utils.output("3 - Done harvesting \"" + repo + "\" - it has " + i
+					+ " documents", Utils.getElapsedTime(startTime));
 			i = 0;
 		}
 	}
