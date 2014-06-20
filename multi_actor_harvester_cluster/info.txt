@@ -1,0 +1,2 @@
+http://doc.akka.io/docs/akka/2.3.3/common/cluster.html
+http://pt.scribd.com/doc/219105819/Scaling-out-with-Akka-Actors
