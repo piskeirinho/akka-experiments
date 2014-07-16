@@ -1,6 +1,8 @@
 package pt.piskeirinho.multi_thread_harvester;
 
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Observable;
 
 import pt.keep.common.oai.RecordType;
@@ -33,7 +35,7 @@ public class HarvesterThread extends Observable implements Runnable {
 		try {
 			Iterator<RecordType> listRecordsIterator = harvester
 					.getListRecordsIterator(null, null, Configs.SET_SPEC,
-							Configs.METADATA_PREFIX);
+							Configs.METADATA_PREFIX, Configs.REQUEST_HEADERS);
 			while (listRecordsIterator.hasNext() && !errorObtainingNext) {
 				try {
 					listRecordsIterator.next();

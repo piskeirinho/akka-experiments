@@ -33,7 +33,7 @@ public class WorkerActor extends UntypedActor {
 		try {
 			Iterator<RecordType> listRecordsIterator = harvester
 					.getListRecordsIterator(null, null, Configs.SET_SPEC,
-							Configs.METADATA_PREFIX);
+							Configs.METADATA_PREFIX, Configs.REQUEST_HEADERS);
 			while (listRecordsIterator.hasNext() && !errorObtainingNext) {
 				try {
 					listRecordsIterator.next();
