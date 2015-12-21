@@ -1,2 +1,0 @@
-$> mvn clean compile exec:java -Dexec.mainClass="pt.piskeirinho.multi_actor_harvester.SequentialHarvester"
-$> mvn clean compile exec:java -Dexec.mainClass="pt.piskeirinho.multi_actor_harvester.MultiActorHarvester"

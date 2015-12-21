@@ -1,0 +1,8 @@
+* Single thread (multi_actor_harvester/src/main/java/pt/piskeirinho/akka/multi_actor_harvester/SequentialHarvester.java )
+$> mvn clean compile exec:java -Dexec.mainClass="pt.piskeirinho.akka.multi_actor_harvester.SequentialHarvester" -pl multi_actor_harvester -am
+
+* Multi thread using ExecutorService (multi_thread_harvester/src/main/java/pt/piskeirinho/akka/multi_thread_harvester/HarvesterApp.java)
+$> mvn clean compile exec:java -Dexec.mainClass="pt.piskeirinho.akka.multi_thread_harvester.HarvesterApp" -pl multi_thread_harvester -am
+
+* "Multi thread" using AKKA (multi_actor_harvester/src/main/java/pt/piskeirinho/akka/multi_actor_harvester/MultiActorHarvester.java )
+$> mvn clean compile exec:java -Dexec.mainClass="pt.piskeirinho.akka.multi_actor_harvester.MultiActorHarvester" -pl multi_actor_harvester -am

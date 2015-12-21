@@ -1,56 +1,45 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>pt.piskeirinho</groupId>
 	<artifactId>multi_actor_harvester</artifactId>
-	<version>1.0.0</version>
 	<name>Multi Actor Harvester</name>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-	<developers>
-		<developer>
-			<id>piskeirinho</id>
-			<name>Helder Silva</name>
-			<email>piskeirinho [at] gmail [dot] com</email>
-		</developer>
-	</developers>
-	<repositories>
-		<repository>
-			<id>KEEP Artifacts</id>
-			<name>KEEP Artifacts-releases</name>
-			<url>http://artifactory.keep.pt/keep</url>
-		</repository>
-	</repositories>
+	<parent>
+		<groupId>pt.piskeirinho</groupId>
+		<artifactId>akka-experiments</artifactId>
+		<version>1.0.0</version>
+		<relativePath>..</relativePath>
+	</parent>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.typesafe.akka</groupId>
 			<artifactId>akka-actor_2.10</artifactId>
-			<version>2.3.3</version>
 		</dependency>
 		<dependency>
 			<groupId>pt.keep</groupId>
 			<artifactId>common-oai-harvester</artifactId>
-			<version>1.1.0</version>
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>pt.piskeirinho</groupId>
+			<artifactId>akka-commons</artifactId>
 		</dependency>
 	</dependencies>
+
+
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<skip>false</skip>
 				</configuration>
 			</plugin>
 		</plugins>

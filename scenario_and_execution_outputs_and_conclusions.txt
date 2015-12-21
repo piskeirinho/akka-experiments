@@ -1,0 +1,76 @@
+######################################
+# Scenario:
+# Harvesting 5 digital repositories
+# through OAI-PMH
+######################################
+
+* Single thread (multi_actor_harvester/src/main/java/pt/piskeirinho/akka/multi_actor_harvester/SequentialHarvester.java )
+[main] [00000,3036839450] 1 - Starting to harvest "http://repositorio.esepf.pt/oai/request"
+[main] [00000,3269085700] 2 - Instantiated harvester for "http://repositorio.esepf.pt/oai/request"
+[main] [00009,5449050050] 3 - Done harvesting "http://repositorio.esepf.pt/oai/request" - it has 785 documents
+[main] [00009,5453771340] 1 - Starting to harvest "http://digituma.uma.pt/oaiextended/request"
+[main] [00009,5454738900] 2 - Instantiated harvester for "http://digituma.uma.pt/oaiextended/request"
+[main] [00012,6011176000] 3 - Done harvesting "http://digituma.uma.pt/oaiextended/request" - it has 917 documents
+[main] [00012,6012980370] 1 - Starting to harvest "http://iconline.ipleiria.pt/oaiextended/driver"
+[main] [00012,6013757020] 2 - Instantiated harvester for "http://iconline.ipleiria.pt/oaiextended/driver"
+[main] [00016,7771266510] 3 - Done harvesting "http://iconline.ipleiria.pt/oaiextended/driver" - it has 1166 documents
+[main] [00016,7773335340] 1 - Starting to harvest "http://repositorio.insa.pt/oaiextended/request"
+[main] [00016,7774280270] 2 - Instantiated harvester for "http://repositorio.insa.pt/oaiextended/request"
+[main] [00028,2681727170] 3 - Done harvesting "http://repositorio.insa.pt/oaiextended/request" - it has 2926 documents
+[main] [00028,2686453630] 1 - Starting to harvest "http://repositorio.ipsantarem.pt/oaiextended/request"
+[main] [00028,2687436010] 2 - Instantiated harvester for "http://repositorio.ipsantarem.pt/oaiextended/request"
+[main] [00034,5388285910] 3 - Done harvesting "http://repositorio.ipsantarem.pt/oaiextended/request" - it has 1081 documents
+
+
+* Multi thread using ExecutorService (multi_thread_harvester/src/main/java/pt/piskeirinho/akka/multi_thread_harvester/HarvesterApp.java)
+[pool-1-thread-1] [00000,2974887230] 1 - Starting to harvest "http://repositorio.esepf.pt/oai/request"
+[pool-1-thread-2] [00000,2974954110] 1 - Starting to harvest "http://digituma.uma.pt/oaiextended/request"
+[pool-1-thread-5] [00000,2972804690] 1 - Starting to harvest "http://repositorio.ipsantarem.pt/oaiextended/request"
+[pool-1-thread-4] [00000,2972894830] 1 - Starting to harvest "http://repositorio.insa.pt/oaiextended/request"
+[pool-1-thread-3] [00000,2974386580] 1 - Starting to harvest "http://iconline.ipleiria.pt/oaiextended/driver"
+[pool-1-thread-5] [00000,3159586720] 2 - Instantiated harvester for "http://repositorio.ipsantarem.pt/oaiextended/request"
+[pool-1-thread-2] [00000,3166463930] 2 - Instantiated harvester for "http://digituma.uma.pt/oaiextended/request"
+[pool-1-thread-4] [00000,3168906760] 2 - Instantiated harvester for "http://repositorio.insa.pt/oaiextended/request"
+[pool-1-thread-3] [00000,3171944750] 2 - Instantiated harvester for "http://iconline.ipleiria.pt/oaiextended/driver"
+[pool-1-thread-1] [00000,3185390650] 2 - Instantiated harvester for "http://repositorio.esepf.pt/oai/request"
+[pool-1-thread-2] [00003,9067566370] 3 - Done harvesting "http://digituma.uma.pt/oaiextended/request"
+[pool-1-thread-2] [00003,9073780940] 4 - "http://digituma.uma.pt/oaiextended/request" has 917 documents
+[pool-1-thread-3] [00004,1955987900] 3 - Done harvesting "http://iconline.ipleiria.pt/oaiextended/driver"
+[pool-1-thread-3] [00004,1960151180] 4 - "http://iconline.ipleiria.pt/oaiextended/driver" has 1166 documents
+[pool-1-thread-5] [00004,2336356030] 3 - Done harvesting "http://repositorio.ipsantarem.pt/oaiextended/request"
+[pool-1-thread-5] [00004,2339757560] 4 - "http://repositorio.ipsantarem.pt/oaiextended/request" has 1081 documents
+[pool-1-thread-1] [00006,8982187860] 3 - Done harvesting "http://repositorio.esepf.pt/oai/request"
+[pool-1-thread-1] [00006,8986958810] 4 - "http://repositorio.esepf.pt/oai/request" has 785 documents
+[pool-1-thread-4] [00009,6392882250] 3 - Done harvesting "http://repositorio.insa.pt/oaiextended/request"
+[pool-1-thread-4] [00009,6396891700] 4 - "http://repositorio.insa.pt/oaiextended/request" has 2926 documents
+
+
+* "Multi thread" using AKKA (multi_actor_harvester/src/main/java/pt/piskeirinho/akka/multi_actor_harvester/MultiActorHarvester.java )
+[MultiActorHarvester-akka.actor.default-dispatcher-7] [00000,1908182890] 1 - Starting to harvest "http://digituma.uma.pt/oaiextended/request"
+[MultiActorHarvester-akka.actor.default-dispatcher-3] [00000,1910343360] 1 - Starting to harvest "http://repositorio.insa.pt/oaiextended/request"
+[MultiActorHarvester-akka.actor.default-dispatcher-5] [00000,1910572570] 1 - Starting to harvest "http://iconline.ipleiria.pt/oaiextended/driver"
+[MultiActorHarvester-akka.actor.default-dispatcher-6] [00000,1910500320] 1 - Starting to harvest "http://repositorio.ipsantarem.pt/oaiextended/request"
+[MultiActorHarvester-akka.actor.default-dispatcher-2] [00000,1908171550] 1 - Starting to harvest "http://repositorio.esepf.pt/oai/request"
+[MultiActorHarvester-akka.actor.default-dispatcher-6] [00000,2092165310] 2 - Instantiated harvester for "http://repositorio.ipsantarem.pt/oaiextended/request"
+[MultiActorHarvester-akka.actor.default-dispatcher-5] [00000,2091910240] 2 - Instantiated harvester for "http://iconline.ipleiria.pt/oaiextended/driver"
+[MultiActorHarvester-akka.actor.default-dispatcher-3] [00000,2091512930] 2 - Instantiated harvester for "http://repositorio.insa.pt/oaiextended/request"
+[MultiActorHarvester-akka.actor.default-dispatcher-7] [00000,2091512580] 2 - Instantiated harvester for "http://digituma.uma.pt/oaiextended/request"
+[MultiActorHarvester-akka.actor.default-dispatcher-2] [00000,2098503000] 2 - Instantiated harvester for "http://repositorio.esepf.pt/oai/request"
+[MultiActorHarvester-akka.actor.default-dispatcher-6] [00003,8024224230] 3 - Done harvesting "http://repositorio.ipsantarem.pt/oaiextended/request"
+[MultiActorHarvester-akka.actor.default-dispatcher-8] [00003,8097778350] 4 - "http://repositorio.ipsantarem.pt/oaiextended/request" has 1081 documents
+[MultiActorHarvester-akka.actor.default-dispatcher-7] [00003,8227264850] 3 - Done harvesting "http://digituma.uma.pt/oaiextended/request"
+[MultiActorHarvester-akka.actor.default-dispatcher-8] [00003,8298294230] 4 - "http://digituma.uma.pt/oaiextended/request" has 917 documents
+[MultiActorHarvester-akka.actor.default-dispatcher-5] [00004,1453500350] 3 - Done harvesting "http://iconline.ipleiria.pt/oaiextended/driver"
+[MultiActorHarvester-akka.actor.default-dispatcher-7] [00004,1526662280] 4 - "http://iconline.ipleiria.pt/oaiextended/driver" has 1166 documents
+[MultiActorHarvester-akka.actor.default-dispatcher-2] [00006,0388969020] 3 - Done harvesting "http://repositorio.esepf.pt/oai/request"
+[MultiActorHarvester-akka.actor.default-dispatcher-5] [00006,0458685430] 4 - "http://repositorio.esepf.pt/oai/request" has 785 documents
+[MultiActorHarvester-akka.actor.default-dispatcher-3] [00008,8210643880] 3 - Done harvesting "http://repositorio.insa.pt/oaiextended/request"
+[MultiActorHarvester-akka.actor.default-dispatcher-5] [00008,8281253950] 4 - "http://repositorio.insa.pt/oaiextended/request" has 2926 documents
+
+######################################
+# Results:
+######################################
+Single thread     = +- 35 seconds
+Multi thread/AKKA = +-  9 seconds
+Bottom line: multi thread/AKKA takes a quarter of the time to accomplish the same task (multi-threaded approach)
+

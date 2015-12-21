@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>multi_actor_with_futures</artifactId>
-	<name>Multi Actor With Futures</name>
+	<artifactId>akka-commons</artifactId>
+	<name>AKKA Commons Stuff</name>
 
 	<parent>
 		<groupId>pt.piskeirinho</groupId>
@@ -27,8 +27,8 @@
 			<artifactId>logback-classic</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>pt.piskeirinho</groupId>
-			<artifactId>akka-commons</artifactId>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
 		</dependency>
 	</dependencies>
 </project>
